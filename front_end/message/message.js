@@ -2,8 +2,11 @@
 
 const url = "https://ichat-messenger.herokuapp.com";
 
-let scrollAuto = true;
+// Sound
+let sendSound = document.querySelector("#sendAudio");
+let getSound = document.querySelector("#seenAudio");
 
+// Messaging
 function show_message(message_data) {
     message_container.firstElementChild.remove();
     let smallBody = document.createElement("div");
@@ -33,6 +36,7 @@ function show_message(message_data) {
             } else {
                 p.style.fontStyle = "normal";
             }
+            sendSound.play();
         } else {
             label.textContent = data.name + " " + data.time;
             p.textContent = data.text;
@@ -65,6 +69,8 @@ function loard_message() {
 };
 
 // SEND MESSAGE----------
+let scrollAuto = true;
+
 function send_message() {
     if (message_text.value !== "") {
         scrollAuto = true;
