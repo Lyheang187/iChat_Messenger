@@ -133,7 +133,7 @@ let message_container = document.querySelector(".message_container")
 let username_login = localStorage.getItem("username");
 let password = localStorage.getItem("password");
 let message_text = document.querySelector(".word");
-let btn_send = document.getElementById("send");
+let btn_send = document.getElementById("sendBTN");
 btn_send.addEventListener("click", send_message);
 
 // KEY ENTER----------
