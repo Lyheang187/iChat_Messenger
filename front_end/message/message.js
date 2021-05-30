@@ -1,4 +1,4 @@
-// const url = "http://192.168.88.14:3000";
+// const url = "http://192.168.88.34:3000";
 
 const url = "https://ichat-messenger.herokuapp.com";
 
