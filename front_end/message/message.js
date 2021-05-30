@@ -2,10 +2,6 @@
 
 const url = "https://ichat-messenger.herokuapp.com";
 
-// Sound
-let sendSound = document.querySelector("#sendAudio");
-let getSound = document.querySelector("#seenAudio");
-
 // Messaging
 function show_message(message_data) {
     message_container.firstElementChild.remove();
@@ -36,7 +32,6 @@ function show_message(message_data) {
             } else {
                 p.style.fontStyle = "normal";
             }
-            sendSound.play();
         } else {
             label.textContent = data.name + " " + data.time;
             p.textContent = data.text;
