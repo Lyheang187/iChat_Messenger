@@ -1,4 +1,6 @@
-const url = "http://192.168.88.34:3000/login";
+// const url = "http://192.168.88.34:3000/login";
+
+const url = "https://ichat-messenger.herokuapp.com/login";
 
 // LOGIN TO CHAT APP----------
 function openApp(event) {

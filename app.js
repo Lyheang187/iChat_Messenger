@@ -5,8 +5,8 @@ let data_user = JSON.parse(fs.readFileSync("data.json"));
 // CREATE A SERVER----------
 const express = require("express");
 const app = express();
-const PORT = 3000;
-app.listen(PORT, () => console.log("server is running.."));
+const PORTS = 3000;
+app.listen(process.env.PORT || PORTS);
 app.use(express.json());
 
 let message_data = JSON.parse(fs.readFileSync("chat.json"));
@@ -22,7 +22,7 @@ app.post("/post", (req, res) => {
     let txt_chat = req.body.text;
     // SHOW TIME----------
     let clock = new Date();
-    let setTime = clock.getHours()+":"+clock.getMinutes();
+    let setTime = clock.getHours() + ":" + clock.getMinutes();
     let info = {
         name: userName,
         text: txt_chat,
@@ -30,7 +30,8 @@ app.post("/post", (req, res) => {
         bold: req.body.bold,
         italic: req.body.italic
     }
-    message_data.push(info);``
+    message_data.push(info);
+    ``
     fs.writeFileSync("chat.json", JSON.stringify(message_data));
     res.send(info);
 })
